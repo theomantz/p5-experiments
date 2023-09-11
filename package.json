@@ -1,0 +1,20 @@
+{
+  "name": "p5experiments",
+  "version": "1.0.0",
+  "description": "a repo for p5 experiments",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "start": "parcel"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@parcel/core": "^2.9.3",
+    "p5": "^1.7.0"
+  },
+  "devDependencies": {
+    "@types/p5": "^1.7.0",
+    "parcel": "^2.9.3"
+  }
+}

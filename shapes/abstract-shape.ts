@@ -18,9 +18,9 @@ export default abstract class Shape {
   _p5: P5;
   _pos: P5.Vector;
   _size: number;
-  _fill: number[];
+  _fill: number[] | P5.Color;
 
-  constructor(p5: P5, pos: P5.Vector, size: number, fill: number[]) {
+  constructor(p5: P5, pos: P5.Vector, size: number, fill: number[] | P5.Color) {
     this._p5 = p5;
     this._pos = pos;
     this._size = size;

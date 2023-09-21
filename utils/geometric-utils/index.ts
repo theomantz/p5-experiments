@@ -15,6 +15,7 @@ export function generateGridPoints(p5: P5, width: number, height?: number) {
     const points: P5.Vector[] = [];
     const w = p5.width / width;
     const h = height ? p5.height / height : w;
+    points.push(p5.createVector(w, h));
     
     for (let y = h; y < p5.height; y += h) {
         for (let x = w; x < p5.width; x += w) {

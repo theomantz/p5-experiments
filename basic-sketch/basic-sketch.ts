@@ -46,18 +46,19 @@ const sketch = (p5: P5) => {
   //       );
   //     }
   //   }
-    const vectors = generateGridPoints(p5, 12, 24);
+    const widthDivisions = p5.random(0, p5.width);
+    const heightDivisions = p5.random(0, p5.height);
+    const vectors = generateGridPoints(p5, widthDivisions, heightDivisions);
     // calculate the longest distance from the center of the canvas
     const maxDistance = p5.dist(0, 0, p5.width / 2, p5.height / 2);
     vectors.forEach((vector) => {
       // generate a size depending on the distance from the center of the canvas
       // calculate the distance of the current vector from the center of the canvas
       const radius = p5.dist(p5.width / 2, p5.height / 2, vector.x, vector.y) / 0.1;
-      const radialSize = p5.map(radius, 0, maxDistance, 10, 15);
-      console.log(vector);
-      console.log(radialSize);
-      const colorCode = p5.random(255);
-      const color = p5.color(colorCode, colorCode, colorCode);
+      // calculate the height and width of the element 
+      const radialSize = p5.map(radius, 0, maxDistance, 1, 15);
+      // const p5.random(255) = p5.random(255);
+      const color = p5.color(p5.random(255), p5.random(255), p5.random(255));
       circles.push(new Circle(p5, vector, radialSize, color));
     });
   };

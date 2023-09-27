@@ -28,4 +28,16 @@ export default abstract class Shape {
   }
 
   draw(): void {}
+
+  get size(): number {
+    return this._size;
+  }
+
+  get pos(): P5.Vector {
+    return this._pos;
+  }
+
+  set size(size: number) {
+    this._size = size;
+  }
 }

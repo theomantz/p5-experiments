@@ -20,7 +20,7 @@ export default function setGradient(
   height: number,
   c1: P5.Color,
   c2: P5.Color,
-  axis: Axis
+  axis: Axis,
 ) {
   p5.noFill();
   console.log(p5);
@@ -48,6 +48,14 @@ export default function setGradient(
       let c = p5.lerpColor(c1, c2, inter);
       p5.stroke(c);
       p5.line(x, y, x + i, y + i);
+    }
+  } else if (axis === Axis.RADIAL) {
+    // Radial gradient
+    for (let r = 0; r <= p5.min(height, width); r++) {
+      let inter = p5.map(r, 0, height, 0, 1);
+      let c = p5.lerpColor(c1, c2, inter);
+      p5.stroke(c);
+      p5.ellipse(x, y, r, r);
     }
   }
 }
